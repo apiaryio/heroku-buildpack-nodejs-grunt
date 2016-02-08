@@ -77,4 +77,5 @@ run_grunt
 clean_npm
 clean_cache
 create_cache
+clean_npm_dev_dependencies
 build_succeeded

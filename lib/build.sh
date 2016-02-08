@@ -229,8 +229,12 @@ clean_npm() {
   rm -rf "$build_dir/.node-gyp"
   rm -rf "$build_dir/.npm"
   info "Pruning possible devDependencies installed in previous step"
+}
+
+clean_npm_dev_dependencies() {
   npm --unsafe-perm --prod prune 2>&1 | indent
 }
+
 
 # Caching
 
