@@ -195,3 +195,9 @@ npm_prune_devdependencies() {
     mtime "prune.npm.time" "${start}"
   fi
 }
+
+
+npm_prune_unused_dependencies() {
+  echo "Pruning unused dependencies"
+  npm --unsafe-perm --dev prune 2>&1
+}
