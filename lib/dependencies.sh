@@ -124,6 +124,8 @@ npm_node_modules() {
     if [ -e $build_dir/package-lock.json ]; then
       echo "Installing node modules (package.json + package-lock)"
     elif [ -e $build_dir/npm-shrinkwrap.json ]; then
+      echo "Pruning unused dependencies"
+      npm prune --dev --unsafe-perm 2>&1
       echo "Installing node modules (package.json + shrinkwrap)"
       npm install --no-optional --unsafe-perm --userconfig $build_dir/.npmrc 2>&1
     else

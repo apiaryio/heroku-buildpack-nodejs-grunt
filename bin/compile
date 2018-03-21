@@ -167,8 +167,6 @@ restore_cache() {
 header "Restoring cache"
 restore_cache | output "$LOG_FILE"
 
-npm_prune_unused_dependencies | output "$LOG_FILE"
-
 build_dependencies() {
   run_if_present 'heroku-prebuild'
 
